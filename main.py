@@ -1,9 +1,16 @@
-from personaje import Personaje
+from classes.personaje import Personaje
+from classes.caballero import Caballero
+from classes.arquero import Arquero
+from classes.mago import Mago
 
-heroe = Personaje("Heroe", frz=12)
+heroe = Caballero()
 
-print(heroe)
-print(f"nombre : {heroe.nombre}")
-print(f"fuerza : {heroe.frz}")
-print(f"defensa : {heroe.dfs}")
-print(f"vida : {heroe.vida}")
+heroe.stats()
+
+heroe.subir_nivel(5, 2, 2)
+heroe.stats()
+
+enemigo = Personaje("Sauron", vida=50)
+enemigo.stats()
+heroe.atacar(enemigo)
+enemigo.stats()
