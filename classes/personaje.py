@@ -15,7 +15,7 @@ class Personaje:
     #dfs = 10 defensa
     #vida = 10
   
-  def __init__(self, nombre="Marginado", frz=10, dfs=10, vida=10, magia=0):
+  def __init__(self, nombre="Marginado", frz=10, dfs=10, vida=100, magia=0):
     self.nombre = nombre
     self.frz = frz
     self.dfs = dfs
