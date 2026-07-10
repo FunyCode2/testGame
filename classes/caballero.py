@@ -16,3 +16,27 @@ class Caballero(Personaje):
     def atributos(self):
         self.stats()
         print(f"- espada = {self.espada}")
+        
+    def graficoAtributos(self):
+        print(f"""
+════════════════════════════════════════════════════
+                ⚔️ GUERRERO
+════════════════════════════════════════════════════
+
+"El escudo del reino y la primera línea de batalla."
+
+Vida        ██████████ 100
+Ataque      ████████░░  80
+Defensa     █████████░  90
+Magia       ██░░░░░░░░  20
+Velocidad   █████░░░░░  50
+
+Habilidad especial:
+► Golpe Demoledor
+Inflige un poderoso ataque con posibilidad de aturdir
+al enemigo.
+
+════════════════════════════════════════════════════
+
+Presiona ENTER para volver...
+        """)

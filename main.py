@@ -11,10 +11,16 @@ from classes.necromante import Necromante
 from classes.druida import Druida
 from functions.bienvenida import mostrar_bienvenida
 from functions.crear_personajes import crearPersonaje
+from functions.menu_inicio import menu_inicio
+from functions.clases import clases
 
 
 
 #-------------------------------------------------INICIO DE JUEGO---------------------------------------------------------------------------------------*
+menu_inicio()
+
+clases()
+
 mostrar_bienvenida()
 
 #------------------------------------------PERSONAJE DEL JUGADOR----------------------------------------------------*
