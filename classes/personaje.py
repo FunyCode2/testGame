@@ -81,6 +81,7 @@ class Personaje:
 
 
   def atacar(self, enemigo):
+<<<<<<< Updated upstream
     dano = self.frz - enemigo.dfs
     
     if dano < 0: 
@@ -90,4 +91,12 @@ class Personaje:
     print(("-" * 5) + "Inicia combate" + ("-" * 5))
     print(f"{self.nombre} ⚔️--> {enemigo.nombre}")
     print(f"💥 {enemigo.nombre} ha recibido {dano} de daño.")
+=======
+    dano = max(0, self.frz - enemigo.dfs)
+    enemigo.vida = max(0, enemigo.vida - dano)
+    print(f"{self.nombre} --> {enemigo.nombre}")
+    print(f"{enemigo.nombre} ha recibido {dano} de daño")
+    if not enemigo.esta_vivo():
+      enemigo.morir()
+>>>>>>> Stashed changes
     print("-" * 50)
