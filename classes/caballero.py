@@ -1,4 +1,5 @@
 from classes.personaje import Personaje
+from functions.barra_vida import barra_vida
 
 class Caballero(Personaje):
     """
@@ -25,11 +26,11 @@ class Caballero(Personaje):
 
 "El escudo del reino y la primera línea de batalla."
 
-Vida        ██████████ 100
-Ataque      ████████░░  80
-Defensa     █████████░  90
-Magia       ██░░░░░░░░  20
-Velocidad   █████░░░░░  50
+(f"Vida        {barra_vida(100)} 100")
+(f"Ataque      {barra_vida(80)}  80")
+(f"Defensa     {barra_vida(90)}  90")
+(f"Magia       {barra_vida(20)}  20")
+(f"Velocidad   {barra_vida(50)}  50")
 
 Habilidad especial:
 ► Golpe Demoledor

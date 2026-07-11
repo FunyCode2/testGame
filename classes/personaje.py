@@ -86,7 +86,6 @@ class Personaje:
     if dano < 0: 
         dano = 0 
         
-    enemigo.vida = enemigo.vida - dano
     print(("-" * 5) + "Inicia combate" + ("-" * 5))
     print(f"{self.nombre} ⚔️--> {enemigo.nombre}")
     print(f"💥 {enemigo.nombre} ha recibido {dano} de daño.")

@@ -1,14 +1,7 @@
 import time
+import sys
 
-from classes.personaje import Personaje
 from classes.caballero import Caballero
-from classes.arquero import Arquero
-from classes.mago import Mago
-from classes.ladron import Ladron
-from classes.berserker import Berserker
-from classes.clerigo import Clerigo
-from classes.necromante import Necromante
-from classes.druida import Druida
 from functions.bienvenida import mostrar_bienvenida
 from functions.crear_personajes import crearPersonaje
 from functions.menu_inicio import menu_inicio
@@ -16,12 +9,24 @@ from functions.clases import clases
 
 
 
-#-------------------------------------------------INICIO DE JUEGO---------------------------------------------------------------------------------------*
-menu_inicio()
+#-------------------------------------------------MENU DE INICIO ---------------------------------------------------------------------------------------*
 
-clases()
+opcion = menu_inicio()
 
-mostrar_bienvenida()
+if opcion == "1":
+    print("\n¡Has elegido iniciar una nueva aventura!")
+    time.sleep(1)
+    mostrar_bienvenida()
+elif opcion == "2":
+    print("\n¡Has elegido ver las clases disponibles!")
+    time.sleep(1)
+    clases()
+elif opcion == "0":
+    print("\n¡Gracias por jugar! Hasta la próxima aventura.")
+else:
+    print("\n❌ Opción inválida. Por favor, elige una opción válida del menú.")
+    sys.exit(1)
+    
 
 #------------------------------------------PERSONAJE DEL JUGADOR----------------------------------------------------*
 
@@ -31,7 +36,7 @@ heroe.stats()
 #heroe.subir_nivel()
 #heroe.stats()
 
-enemigo = Berserker("Sauron")
+enemigo = Caballero("Sauron")
 enemigo.stats()
 #heroe.atacar(enemigo)
 #enemigo.stats()
@@ -47,16 +52,3 @@ print("------------------------------------------------------------\n")
 
 
 # ---  Combate  ---
-while heroe.esta_vivo() and enemigo.esta_vivo():
-    heroe.atacar(enemigo)
-
-    if not enemigo.esta_vivo():
-        print(f"\n💀 {enemigo.nombre} ha sido derrotado de forma definitiva.")
-        heroe.subir_nivel()
-        break               
-        
-    enemigo.atacar(heroe)
-    
-    if not heroe.esta_vivo():
-        heroe.morir()
-        break 
